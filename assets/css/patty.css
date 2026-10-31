@@ -392,7 +392,8 @@ figure.revela.visto { clip-path: inset(0 0 0 0); }
   .hero-acoes .btn { padding: 0 12px; gap: 10px; }
   .hero-corpo { flex: none; }
   .hero-info { margin-top: 18px; gap: 6px 18px; font-size: 13px; }
-  .hero-fumaca { top: 30%; }
+  /* o MP4 em pé tem fumaça até a primeira linha: sem a máscara, o topo da caixa vira uma linha reta no meio da foto */
+  .hero-fumaca { top: 30%; -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 38%); mask-image: linear-gradient(180deg, transparent 0, #000 38%); }
 }
 @media (max-width: 700px) {
   :root { --topo: 64px; }
@@ -449,7 +450,7 @@ figure.revela.visto { clip-path: inset(0 0 0 0); }
   .hero-mono { display: none; }
   .hero-nome { font-size: 58px; }
   .hero-acoes { display: flex; width: auto; }
-  .hero-fumaca { top: 0; }
+  .hero-fumaca { top: 0; -webkit-mask-image: none; mask-image: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }
